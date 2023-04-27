@@ -24,4 +24,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="admin_login_text">Admin Login</string>
+    <string name="tambah_staff">Tambah Staff</string>
+    <string name="tambah_stok">Tambah Stok</string>
+    <string name="add_ecommerce_staff">Add ECommerce Staff</string>
+    <string name="staff_login_text">Staff Login</string>
 </resources>

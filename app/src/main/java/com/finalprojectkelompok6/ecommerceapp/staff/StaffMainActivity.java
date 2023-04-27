@@ -1,8 +1,7 @@
-package com.finalprojectkelompok6.ecommerceapp.users;
+package com.finalprojectkelompok6.ecommerceapp.staff;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +9,12 @@ import android.widget.TextView;
 
 import com.finalprojectkelompok6.ecommerceapp.MainActivity;
 import com.finalprojectkelompok6.ecommerceapp.R;
+import com.finalprojectkelompok6.ecommerceapp.users.UserLoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class UserMainActivity extends AppCompatActivity {
+public class StaffMainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseUser user;
@@ -24,15 +24,15 @@ public class UserMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_main);
+        setContentView(R.layout.activity_staff_main);
 
         auth = FirebaseAuth.getInstance();
         floatingActionButton = findViewById(R.id.btn_logout);
-        textView = findViewById(R.id.textUser);
+        textView = findViewById(R.id.textStaff);
         user = auth.getCurrentUser();
 
         if (user == null) {
-            Intent intent = new Intent(getApplicationContext(), UserLoginActivity.class);
+            Intent intent = new Intent(getApplicationContext(), StaffLoginActivity.class);
             startActivity(intent);
             finish();
         } else {
