@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.finalprojectkelompok6.ecommerceapp.admin.AdminLoginActivity;
 import com.finalprojectkelompok6.ecommerceapp.users.UserLoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAdmin = findViewById(R.id.btn_admin);
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AdminLoginActivity.class);
                 startActivity(intent);
             }
         });

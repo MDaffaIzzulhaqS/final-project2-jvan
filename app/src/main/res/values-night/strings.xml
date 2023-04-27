@@ -11,4 +11,5 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="click_this_to_login_screen">Click This To Login Screen</string>
     <string name="click_this_to_register_screen">Click This To Register Screen</string>
+    <string name="admin_login_text">Admin Login</string>
 </resources>
