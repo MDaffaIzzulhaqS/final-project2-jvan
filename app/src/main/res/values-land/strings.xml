@@ -5,4 +5,6 @@
     <string name="tambah_stok">Tambah Stok</string>
     <string name="add_ecommerce_staff">Add ECommerce Staff</string>
     <string name="staff_login_text">Staff Login</string>
+    <string name="logout">Logout</string>
+    <string name="current_user">Current User</string>
 </resources>
