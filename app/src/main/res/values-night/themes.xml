@@ -2,6 +2,17 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ECommerceApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/blue</item>
     </style>
+
+    <style name="Theme.ECommerceApp" parent="Base.Theme.ECommerceApp" />
+
+    <style name="Theme.ECommerceApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ECommerceApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ECommerceApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

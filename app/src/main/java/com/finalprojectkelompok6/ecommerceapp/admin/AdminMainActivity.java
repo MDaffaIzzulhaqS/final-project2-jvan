@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class AdminMainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private FirebaseUser user;
+    private FirebaseUser admin;
     private FloatingActionButton floatingActionButton;
     private TextView textView;
     private Button btnStaff, btnStock;
@@ -31,7 +31,7 @@ public class AdminMainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         floatingActionButton = findViewById(R.id.btn_logout);
         textView = findViewById(R.id.textAdmin);
-        user = auth.getCurrentUser();
+        admin = auth.getCurrentUser();
 
         btnStaff = findViewById(R.id.btn_AddStaff);
         btnStaff.setOnClickListener(new View.OnClickListener() {
@@ -51,12 +51,12 @@ public class AdminMainActivity extends AppCompatActivity {
             }
         });
 
-        if (user == null) {
-            Intent intent = new Intent(getApplicationContext(), UserLoginActivity.class);
+        if (admin == null) {
+            Intent intent = new Intent(getApplicationContext(), AdminLoginActivity.class);
             startActivity(intent);
             finish();
         } else {
-            textView.setText(user.getEmail());
+            textView.setText(admin.getEmail());
         }
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
