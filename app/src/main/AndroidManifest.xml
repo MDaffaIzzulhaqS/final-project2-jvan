@@ -15,6 +15,18 @@
         android:theme="@style/Theme.ECommerceApp"
         tools:targetApi="31">
         <activity
+            android:name=".users.detail.UserDetailKueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.detail.UserDetailBukuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.detail.UserDetailHandphoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.detail.UserDetailBajuActivity"
+            android:exported="false" />
+        <activity
             android:name=".staff.About"
             android:exported="false" />
         <activity
