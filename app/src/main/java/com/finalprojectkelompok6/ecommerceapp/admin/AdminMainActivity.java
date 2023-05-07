@@ -19,9 +19,8 @@ public class AdminMainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseUser admin;
-    private FloatingActionButton floatingActionButton;
     private TextView textView;
-    private Button btnStaff, btnStock;
+    private Button btnStaff, btnStock, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class AdminMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_main);
 
         auth = FirebaseAuth.getInstance();
-        floatingActionButton = findViewById(R.id.btn_logout);
+        btnLogout = findViewById(R.id.btn_logout);
         textView = findViewById(R.id.textAdmin);
         admin = auth.getCurrentUser();
 
@@ -59,7 +58,7 @@ public class AdminMainActivity extends AppCompatActivity {
             textView.setText(admin.getEmail());
         }
 
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();

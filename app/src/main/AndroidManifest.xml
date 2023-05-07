@@ -8,12 +8,15 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_ecommerce"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_ecommerce_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ECommerceApp"
         tools:targetApi="31">
+        <activity
+            android:name=".admin.CrudStockActivity"
+            android:exported="false" />
         <activity
             android:name=".users.detail.UserDetailKueActivity"
             android:exported="false" />
@@ -21,7 +24,7 @@
             android:name=".users.detail.UserDetailBukuActivity"
             android:exported="false" />
         <activity
-            android:name=".users.detail.UserDetailHandphoneActivity"
+            android:name=".users.detail.UserDetailElektronikActivity"
             android:exported="false" />
         <activity
             android:name=".users.detail.UserDetailBajuActivity"

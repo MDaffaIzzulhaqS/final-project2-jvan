@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.finalprojectkelompok6.ecommerceapp.R;
 
-public class UserDetailHandphoneActivity extends AppCompatActivity {
+public class UserDetailElektronikActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_detail_handphone);
+        setContentView(R.layout.activity_user_detail_elektronik);
     }
 }

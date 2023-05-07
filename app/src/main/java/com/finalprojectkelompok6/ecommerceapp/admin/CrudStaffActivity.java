@@ -50,7 +50,7 @@ public class CrudStaffActivity extends AppCompatActivity {
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdminMainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AddStaffActivity.class);
                 startActivity(intent);
                 finish();
             }
