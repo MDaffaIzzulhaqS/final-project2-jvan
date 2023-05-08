@@ -59,6 +59,7 @@ public class AddStockActivity extends AppCompatActivity {
                                 intent.putExtra("name", list.get(pos).getNama());
                                 intent.putExtra("category", list.get(pos).getCategory());
                                 intent.putExtra("jumlah", list.get(pos).getJumlah_barang());
+                                intent.putExtra("price", list.get(pos).getHarga_barang());
                                 intent.putExtra("image", list.get(pos).getImage_product());
                                 startActivity(intent);
                                 break;
@@ -104,6 +105,7 @@ public class AddStockActivity extends AppCompatActivity {
                                 Stock stock = new Stock(document.getString("nama"),
                                         document.getString("category"),
                                         document.getString("jumlah"),
+                                        document.getString("price"),
                                         document.getString("image"));
                                 stock.setId(document.getId());
                                 list.add(stock);

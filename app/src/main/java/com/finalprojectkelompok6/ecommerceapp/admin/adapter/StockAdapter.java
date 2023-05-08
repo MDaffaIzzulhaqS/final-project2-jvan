@@ -49,6 +49,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHol
         holder.name.setText(stockList.get(position).getNama());
         holder.category.setText(stockList.get(position).getCategory());
         holder.jumlah_barang.setText(stockList.get(position).getJumlah_barang());
+        holder.harga_barang.setText(stockList.get(position).getHarga_barang());
         Glide.with(context).load(stockList.get(position).getImage_product()).into(holder.image_product);
     }
 
@@ -58,7 +59,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHol
     }
 
     class StockViewHolder extends RecyclerView.ViewHolder {
-        TextView name, category, jumlah_barang;
+        TextView name, category, jumlah_barang, harga_barang;
         ImageView image_product;
 
         public StockViewHolder(@NonNull View itemView) {
@@ -66,6 +67,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHol
             name = itemView.findViewById(R.id.stock_name);
             category = itemView.findViewById(R.id.stock_category);
             jumlah_barang = itemView.findViewById(R.id.stock_jumlah_barang);
+            harga_barang = itemView.findViewById(R.id.stock_harga_barang);
             image_product = itemView.findViewById(R.id.image_product);
 
             itemView.setOnClickListener(new View.OnClickListener() {

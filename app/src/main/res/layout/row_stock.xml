@@ -38,6 +38,12 @@
             android:layout_height="wrap_content"
             android:text="Jumlah Barang" />
 
+        <TextView
+            android:id="@+id/stock_harga_barang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga Barang" />
+
     </LinearLayout>
 
 

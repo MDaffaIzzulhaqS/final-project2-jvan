@@ -41,7 +41,7 @@ import java.util.Map;
 public class CrudStockActivity extends AppCompatActivity {
 
     private String id = "";
-    private EditText editNama, editKategori, editJumlahStok;
+    private EditText editNama, editKategori, editJumlahStok, editHarga;
     private ImageView imageProduct;
     private ProgressBar progressBar;
     private Button btnSave, btnReturn;
@@ -54,6 +54,7 @@ public class CrudStockActivity extends AppCompatActivity {
         editNama = findViewById(R.id.nama);
         editKategori = findViewById(R.id.category);
         editJumlahStok = findViewById(R.id.jumlah_barang);
+        editHarga = findViewById(R.id.harga_barang);
         imageProduct = findViewById(R.id.image_product);
         progressBar = findViewById(R.id.progressBar);
         btnSave = findViewById(R.id.btn_save);
@@ -75,10 +76,12 @@ public class CrudStockActivity extends AppCompatActivity {
         btnSave.setOnClickListener(view -> {
             if (editNama.getText().length()>0
                     || editKategori.getText().length()>0
-                    || editJumlahStok.getText().length()>0) {
+                    || editJumlahStok.getText().length()>0
+                    || editHarga.getText().length()>0) {
                 UploadImage(editNama.getText().toString(),
                         editKategori.getText().toString(),
-                        editJumlahStok.getText().toString());
+                        editJumlahStok.getText().toString(),
+                        editHarga.getText().toString());
             } else {
                 Toast.makeText(getApplicationContext(),
                         "Data Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
@@ -91,6 +94,7 @@ public class CrudStockActivity extends AppCompatActivity {
             editNama.setText(intent.getStringExtra("name"));
             editKategori.setText(intent.getStringExtra("category"));
             editJumlahStok.setText(intent.getStringExtra("jumlah"));
+            editHarga.setText(intent.getStringExtra("price"));
             Glide.with(getApplicationContext()).load(intent.getStringExtra("image")).into(imageProduct);
         }
     }
@@ -145,7 +149,7 @@ public class CrudStockActivity extends AppCompatActivity {
         }
     }
 
-    private void UploadImage(String name, String category, String jumlah_barang) {
+    private void UploadImage(String name, String category, String jumlah_barang, String harga) {
         progressBar.setVisibility(View.VISIBLE);
         imageProduct.setDrawingCacheEnabled(true);
         imageProduct.buildDrawingCache();
@@ -175,7 +179,7 @@ public class CrudStockActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Uri> task) {
                                 if (task.getResult() != null) {
-                                    SaveData(name, category, jumlah_barang, task.getResult().toString());
+                                    SaveData(name, category, jumlah_barang, harga, task.getResult().toString());
                                     progressBar.setVisibility(View.GONE);
                                 }
                             }
@@ -194,11 +198,12 @@ public class CrudStockActivity extends AppCompatActivity {
         });
     }
 
-    private void SaveData (String name, String category, String jumlah_barang, String image_product) {
+    private void SaveData (String name, String category, String jumlah_barang, String harga, String image_product) {
         Map<String, Object> stock = new HashMap<>();
         stock.put("nama", name);
         stock.put("category", category);
         stock.put("jumlah", jumlah_barang);
+        stock.put("price", harga);
         stock.put("image", image_product);
 
         progressBar.setVisibility(View.VISIBLE);
