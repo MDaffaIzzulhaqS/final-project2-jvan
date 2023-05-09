@@ -5,48 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".users.detail.UserDetailBukuActivity">
-
-    <ImageView
-        android:id="@+id/img_buku"
-        android:layout_width="match_parent"
-        android:layout_height="340dp"
-        app:srcCompat="@drawable/ic_launcher_background" />
+    tools:context=".users.detail.UserDetailBajuActivity">
 
     <TextView
-        android:id="@+id/tittle_buku"
+        android:id="@+id/tittle_buku_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Product Tittle"
-        android:textColor="#000000" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Aneka Macam Buku"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/stock_buku"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_buku"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Stock : 50"
-        android:textColor="#393939" />
-
-    <TextView
-        android:id="@+id/price_buku"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="9dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Rp. 00.000"
-        android:textColor="#000000" />
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp" />
 
 </LinearLayout>
 
