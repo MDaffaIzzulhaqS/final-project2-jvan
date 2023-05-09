@@ -7,12 +7,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.finalprojectkelompok6.ecommerceapp.R;
+import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.BukuAdapter;
+import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Buku;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDetailBukuActivity extends AppCompatActivity {
     private ImageView bukuImg;
     private TextView bukuTittle;
     private TextView bukuStock;
     private TextView bukuPrice;
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private List<Buku> list = new ArrayList<>();
+    private BukuAdapter bukuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
