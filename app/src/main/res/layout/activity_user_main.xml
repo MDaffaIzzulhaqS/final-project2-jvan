@@ -7,25 +7,6 @@
     tools:context=".users.UserMainActivity">
 
     <ImageView
-        android:layout_width="439dp"
-        android:layout_height="235dp"
-        android:layout_marginBottom="576dp"
-        android:src="@drawable/ic_rectangle_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:layout_width="220dp"
-        android:layout_height="567dp"
-        android:layout_marginBottom="364dp"
-        android:src="@drawable/ic_user"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
         android:id="@+id/btn_baju"
         android:layout_width="170dp"
         android:layout_height="170dp"
@@ -35,19 +16,20 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_handphone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <ImageView
         android:id="@+id/btn_handphone"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:src="@drawable/handphone"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <ImageView
         android:id="@+id/btn_kue"
@@ -59,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <ImageView
         android:id="@+id/btn_buku"
@@ -71,7 +53,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_kue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -84,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.947" />
 
     <TextView
         android:id="@+id/text_baju"
@@ -97,8 +79,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_baju"
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
         android:id="@+id/text_elektronik"
@@ -109,10 +91,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_handphone"
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/text_buku"
@@ -121,12 +103,12 @@
         android:text="Buku"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_buku"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_buku"
+        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/text_kue"
@@ -135,11 +117,11 @@
         android:text="Kue"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_kue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_kue"
+        app:layout_constraintVertical_bias="0.113" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
