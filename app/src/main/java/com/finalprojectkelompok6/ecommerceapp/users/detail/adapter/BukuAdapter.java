@@ -29,16 +29,15 @@ public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.ListViewHolder
     @NonNull
     @Override
     public BukuAdapter.ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_user_detail_buku, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_buku, parent, false);
         return new ListViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BukuAdapter.ListViewHolder holder, int position) {
         holder.name.setText(list.get(position).getNama());
-        holder.category.setText(list.get(position).getCategory());
         holder.jumlah_barang.setText(list.get(position).getJumlah_barang());
-        holder.harga_barang.setText(list.get(position).getHarga_barang());
+        holder.harga_barang.setText("Rp"+list.get(position).getHarga_barang());
         Glide.with(context).load(list.get(position).getImage_product()).into(holder.image_product);
     }
 
@@ -48,7 +47,7 @@ public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.ListViewHolder
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        TextView name, category, jumlah_barang, harga_barang;
+        TextView name, jumlah_barang, harga_barang;
         ImageView image_product;
 
         public ListViewHolder(@NonNull View itemView) {

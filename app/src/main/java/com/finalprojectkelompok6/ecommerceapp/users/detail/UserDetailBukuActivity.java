@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.finalprojectkelompok6.ecommerceapp.R;
+import com.finalprojectkelompok6.ecommerceapp.admin.adapter.StockAdapter;
 import com.finalprojectkelompok6.ecommerceapp.admin.model.Stock;
 import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.BukuAdapter;
 import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Buku;
@@ -38,7 +39,7 @@ public class UserDetailBukuActivity extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rv_buku);
 
-        db=FirebaseFirestore.getInstance();
+        bukuAdapter = new BukuAdapter(getApplicationContext(), list);
         get_data();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),
@@ -57,10 +58,10 @@ public class UserDetailBukuActivity extends AppCompatActivity {
         get_data();
     }
     private void get_data() {
-        db.collection("buku")
+        db.collection("stock")
+                .whereEqualTo("category", "Buku")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
@@ -74,7 +75,7 @@ public class UserDetailBukuActivity extends AppCompatActivity {
                                 buku.setId(document.getId());
                                 list.add(buku);
                             }
-//                            BukuAdapter.notifyDataSetChanged();
+                            bukuAdapter.notifyDataSetChanged();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     "Data Gagal Dimuat", Toast.LENGTH_SHORT).show();

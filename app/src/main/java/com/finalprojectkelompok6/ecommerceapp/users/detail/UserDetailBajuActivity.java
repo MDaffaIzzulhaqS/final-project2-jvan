@@ -6,17 +6,13 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.finalprojectkelompok6.ecommerceapp.R;
-import com.finalprojectkelompok6.ecommerceapp.admin.adapter.StaffAdapter;
-import com.finalprojectkelompok6.ecommerceapp.admin.model.Staff;
+import com.finalprojectkelompok6.ecommerceapp.admin.adapter.StockAdapter;
 import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.BajuAdapter;
-import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.BukuAdapter;
 import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Baju;
-import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Buku;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -39,7 +35,7 @@ public class UserDetailBajuActivity extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rv_baju);
 
-        db=FirebaseFirestore.getInstance();
+        bajuAdapter = new BajuAdapter(getApplicationContext(), list);
         get_data();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),
@@ -58,10 +54,10 @@ public class UserDetailBajuActivity extends AppCompatActivity {
         get_data();
     }
     private void get_data() {
-        db.collection("baju")
+        db.collection("stock")
+                .whereEqualTo("category", "Baju")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
@@ -75,7 +71,7 @@ public class UserDetailBajuActivity extends AppCompatActivity {
                                 baju.setId(document.getId());
                                 list.add(baju);
                             }
-//                            BajuAdapter.notifyDataSetChanged();
+                            bajuAdapter.notifyDataSetChanged();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     "Data Gagal Dimuat", Toast.LENGTH_SHORT).show();

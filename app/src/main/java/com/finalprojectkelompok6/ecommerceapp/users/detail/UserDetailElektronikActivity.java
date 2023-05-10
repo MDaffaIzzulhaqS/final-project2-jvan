@@ -6,16 +6,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.finalprojectkelompok6.ecommerceapp.R;
-import com.finalprojectkelompok6.ecommerceapp.admin.adapter.StaffAdapter;
-import com.finalprojectkelompok6.ecommerceapp.admin.model.Staff;
-import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.BukuAdapter;
-import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.HandphoneAdapter;
-import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Buku;
+import com.finalprojectkelompok6.ecommerceapp.admin.adapter.StockAdapter;
+import com.finalprojectkelompok6.ecommerceapp.users.detail.adapter.ElektronikAdapter;
 import com.finalprojectkelompok6.ecommerceapp.users.detail.model.Handphone;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,7 +26,7 @@ public class UserDetailElektronikActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Handphone> list = new ArrayList<>();
-    private HandphoneAdapter handphoneAdapter;
+    private ElektronikAdapter elektronikAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,7 @@ public class UserDetailElektronikActivity extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rv_elektronik);
 
-        db=FirebaseFirestore.getInstance();
+        elektronikAdapter = new ElektronikAdapter(getApplicationContext(), list);
         get_data();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),
@@ -48,7 +44,7 @@ public class UserDetailElektronikActivity extends AppCompatActivity {
                 DividerItemDecoration.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(itemDecoration);
-        recyclerView.setAdapter(handphoneAdapter);
+        recyclerView.setAdapter(elektronikAdapter);
 
     }
 
@@ -58,10 +54,10 @@ public class UserDetailElektronikActivity extends AppCompatActivity {
         get_data();
     }
     private void get_data() {
-        db.collection("elektronik")
+        db.collection("stock")
+                .whereEqualTo("category", "Elektronik")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
@@ -75,7 +71,7 @@ public class UserDetailElektronikActivity extends AppCompatActivity {
                                 handphone.setId(document.getId());
                                 list.add(handphone);
                             }
-//                            BukuAdapter.notifyDataSetChanged();
+                            elektronikAdapter.notifyDataSetChanged();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     "Data Gagal Dimuat", Toast.LENGTH_SHORT).show();

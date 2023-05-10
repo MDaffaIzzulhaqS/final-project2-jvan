@@ -29,16 +29,15 @@ public class BajuAdapter extends RecyclerView.Adapter<BajuAdapter.BajuViewHolder
     @NonNull
     @Override
     public BajuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_user_detail_baju, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_baju, parent, false);
         return new BajuViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BajuViewHolder holder, int position) {
         holder.name.setText(list.get(position).getNama());
-        holder.category.setText(list.get(position).getCategory());
         holder.jumlah_barang.setText(list.get(position).getJumlah_barang());
-        holder.harga_barang.setText(list.get(position).getHarga_barang());
+        holder.harga_barang.setText("Rp"+list.get(position).getHarga_barang());
         Glide.with(context).load(list.get(position).getImage_product()).into(holder.image_product);
     }
 
@@ -47,8 +46,8 @@ public class BajuAdapter extends RecyclerView.Adapter<BajuAdapter.BajuViewHolder
         return list.size();
     }
 
-    public class BajuViewHolder extends RecyclerView.ViewHolder {
-        TextView name, category, jumlah_barang, harga_barang;
+    class BajuViewHolder extends RecyclerView.ViewHolder {
+        TextView name, jumlah_barang, harga_barang;
         ImageView image_product;
         public BajuViewHolder(@NonNull View itemView) {
             super(itemView);
