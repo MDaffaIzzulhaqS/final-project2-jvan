@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="40dp"
     tools:context=".users.UserRegisterActivity">
 
     <TextView
@@ -14,6 +15,7 @@
         android:text="@string/users_register"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_marginBottom="16dp"
         android:textAlignment="center"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,6 +39,7 @@
             android:id="@+id/users_password"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -51,7 +54,7 @@
     <Button
         android:id="@+id/btn_register"
         android:text="@string/register"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     
     <TextView
