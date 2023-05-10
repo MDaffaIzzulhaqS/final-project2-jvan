@@ -1,11 +1,9 @@
 package com.finalprojectkelompok6.ecommerceapp.users.detail.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +19,7 @@ import java.util.List;
 public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.ListViewHolder> {
     private final Context context;
     private final List<Buku> list;
+
 
     public BukuAdapter(Context context, List<Buku> list) {
         this.context = context;
