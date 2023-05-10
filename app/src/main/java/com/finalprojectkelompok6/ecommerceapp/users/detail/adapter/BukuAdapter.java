@@ -45,7 +45,7 @@ public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.ListViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
@@ -57,7 +57,7 @@ public class BukuAdapter extends RecyclerView.Adapter<BukuAdapter.ListViewHolder
             name = itemView.findViewById(R.id.tittle_buku);
             jumlah_barang = itemView.findViewById(R.id.stock_buku);
             harga_barang = itemView.findViewById(R.id.price_buku);
-            image_product = itemView.findViewById(R.id.img_buku);
+            image_product = itemView.findViewById(R.id.image_buku);
         }
     }
 }
