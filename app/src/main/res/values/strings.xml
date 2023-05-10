@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ECommerceApp</string>
+    <string name="app_name">HacktivShop</string>
     <string name="users_login">Users Login</string>
     <string name="user_login">User Login</string>
     <string name="admin_login">Admin Login</string>
