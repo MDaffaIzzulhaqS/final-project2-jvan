@@ -23,16 +23,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="315dp"
-        android:layout_height="260dp"
-        android:src="@drawable/icon_notif"
+        android:layout_width="395dp"
+        android:layout_height="322dp"
         android:backgroundTint="@color/dark_grey"
+        android:src="@drawable/icon_shop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <TextView
         android:id="@+id/textView3"
