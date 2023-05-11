@@ -7,6 +7,16 @@
     tools:context=".users.UserMainActivity">
 
     <ImageView
+        android:id="@+id/iconshape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shape4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/btn_baju"
         android:layout_width="170dp"
         android:layout_height="170dp"
@@ -16,7 +26,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_handphone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <ImageView
         android:id="@+id/btn_handphone"
@@ -29,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <ImageView
         android:id="@+id/btn_kue"
@@ -41,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.698" />
 
     <ImageView
         android:id="@+id/btn_buku"
@@ -53,20 +63,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_kue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.698" />
 
     <TextView
         android:id="@+id/text_baju"
@@ -80,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_baju"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/text_elektronik"
@@ -94,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_handphone"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/text_buku"
@@ -108,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_buku"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <TextView
         android:id="@+id/text_kue"
@@ -119,9 +116,33 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_kue"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.063" />
+
+    <ImageView
+        android:id="@+id/iconshape2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:rotation="0"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shape3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
