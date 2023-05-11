@@ -1,4 +1,4 @@
-# final-project2-jvan
+# Final Project 2 JVAN
 
 Final Project 2 Kelompok 6 JVAN Hacktiv8 SIB Batch 4
 
