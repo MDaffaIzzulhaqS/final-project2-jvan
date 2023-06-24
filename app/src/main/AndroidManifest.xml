@@ -15,6 +15,15 @@
         android:theme="@style/Theme.ECommerceApp"
         tools:targetApi="31">
         <activity
+            android:name=".users.pembelian.UserHistoryPembelianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.pembelian.UserPembelianSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.pembelian.UserPembelianActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.CrudStockActivity"
             android:exported="false" />
         <activity
